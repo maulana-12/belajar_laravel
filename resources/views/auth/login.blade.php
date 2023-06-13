@@ -62,6 +62,9 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+
+                                <a class="btn btn-danger" href="{{ '/auth/redirect'}}">google</a>
+
                             </div>
                         </div>
                     </form>
