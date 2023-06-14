@@ -25,6 +25,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'phone_number',
         'password',
+        'member_id',
     ];
 
     /**
@@ -46,4 +47,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function member()
+    {
+        return $this->hasOne(Member::class);
+    }
 }

@@ -66,6 +66,14 @@
                                     </form>
                                 </div>
                             </li>
+                            @if (Auth::user()->email_verified_at && !Auth::user()->member)
+                            <li>
+                                <a id="registerMember" class="nav-link" href="{{ route('registerMember') }}" >
+                                    {{"Hallo ". Auth::user()->name.", mau daftar member?" }}
+                                </a>
+                            </li> 
+                            @endif
+                           
                         @endguest
                     </ul>
                 </div>

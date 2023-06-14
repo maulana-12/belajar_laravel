@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Member\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,5 @@ Route::get('/profile', function () {
 
 Route::group(['middleware' => ['auth']], function () {
     route::get('/home', [HomeController::class, 'index'])->name('home');
+    route::get('/user/register_member', [RegisterController::class, 'create'])->name('registerMember');
 });
